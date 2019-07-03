@@ -1,4 +1,9 @@
-<table class="table">
+<ul class="employees">
+    <li *ngFor="let employee of employees">
+      <span class="badge">{{employee.id}}</span> {{employee.firstName}}
+    </li>
+  </ul>
+<!--<table class="table">
     <thead class="thead-dark">
       <tr>
         <th scope="col">#</th>
@@ -58,4 +63,4 @@
         <td>@twitter</td>
       </tr>
     </tbody>
-  </table>
+  </table>-->
