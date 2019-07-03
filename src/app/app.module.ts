@@ -8,6 +8,7 @@ import { AnnuaireComponent } from './annuaire/annuaire.component';
 import { ContactComponent } from './annuaire/contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactListComponent } from './annuaire/contact-list/contact-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ContactListComponent } from './annuaire/contact-list/contact-list.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
