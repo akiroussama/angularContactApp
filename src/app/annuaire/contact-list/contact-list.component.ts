@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MockEmployees } from '../../mock-employees';
+import { Employee } from 'src/app/employee';
 
 @Component({
   selector: 'app-contact-list',
@@ -9,6 +10,10 @@ import { MockEmployees } from '../../mock-employees';
 export class ContactListComponent implements OnInit {
 
   employees = MockEmployees;
+  selectedEmp: Employee;
+  onSelect(emp: Employee): void {
+    this.selectedEmp = emp;
+  }
 
   constructor() { }
 
