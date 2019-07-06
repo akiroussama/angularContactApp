@@ -23,6 +23,10 @@ export class ContactComponent implements OnInit {
     this.getEmployee();
   }
 
+  goBack(): void {
+    this.location.back();
+  }
+
   getEmployee(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.employeeService.getEmployeeById(id)
