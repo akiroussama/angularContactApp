@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../../employee';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { EmployeeService } from 'src/app/employee.service';
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -7,16 +11,21 @@ import { Employee } from '../../employee';
 })
 export class ContactComponent implements OnInit {
 
-  employee: Employee = {
-    id: 1,
-    firstName: 'mohamed',
-    lastName: 'akir',
-    email: 'moakir@gmail.com'
-  };
+  employee: Employee;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private employeeService: EmployeeService,
+    private location: Location
+  ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getEmployee();
   }
 
+  getEmployee(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.employeeService.getEmployeeById(id)
+      .subscribe(emp => this.employee = emp);
+  }
 }

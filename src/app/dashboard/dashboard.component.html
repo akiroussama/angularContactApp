@@ -1,6 +1,6 @@
 <h3>Top Heroes</h3>
 <div class="grid grid-pad">
-  <a *ngFor="let employee of employees" class="col-1-4">
+  <a *ngFor="let employee of employees"  routerLink="/contactDetails/{{employee.id}}" class="col-1-4">
     <div class="module employee">
       <h4>{{employee.firstName}}</h4>
     </div>

@@ -15,7 +15,9 @@
     <tbody>
         <tr *ngFor="let employee of employees" (click)="onSelect(employee)">
             <th scope="row">{{employee.id}}</th>
-            <td>{{employee.firstName}}</td>
+            <a routerLink="/contactDetails/{{employee.id}}">
+              <td>{{employee.firstName}}</td>
+            </a>
             <td>{{employee.lastName}}</td>
             <td>{{employee.email}}</td>
           </tr>

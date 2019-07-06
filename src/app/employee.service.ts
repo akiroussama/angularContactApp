@@ -12,9 +12,15 @@ export class EmployeeService {
   constructor(private messageService: MessageService) { }
 
   getEmployee(): Observable<Employee[]> {
-    // TODO: send the message _after_ fetching the heroes
+    // TODO: send the message _after_ fetching the employeees
     this.messageService.add('EmployeeService: fetched Employees !');
     return of(MockEmployees);
+  }
+
+  getEmployeeById(id: number): Observable<Employee> {
+    // TODO: send the message _after_ fetching the employee
+    this.messageService.add(`EmployeeService: fetched hero id=${id}`);
+    return of(MockEmployees.find(employee => employee.id === id));
   }
 
 }
